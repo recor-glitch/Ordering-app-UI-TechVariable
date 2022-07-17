@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+All the pages are being nested using generated routes in the home screen.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
