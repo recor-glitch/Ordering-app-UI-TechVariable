@@ -20,7 +20,8 @@ class ProductCard extends StatelessWidget {
           Stack(
             children: [
               Container(
-            constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height * 0.2),
+                constraints: BoxConstraints(
+                    minHeight: MediaQuery.of(context).size.height * 0.2),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
@@ -41,29 +42,36 @@ class ProductCard extends StatelessWidget {
                   ))
             ],
           ),
-          Text(product.name,
-              style: GoogleFonts.openSans(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(27, 25, 25, 1))),
-          Text(product.content,
-              style: GoogleFonts.openSans(
-                  fontSize: 12, color: Color.fromRGBO(148, 133, 133, 1))),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('₹ ${product.price}',
+              Text(product.name,
                   style: GoogleFonts.openSans(
-                      fontSize: 20, fontWeight: FontWeight.bold)),
-              InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10), color: yellow),
-                    child: Icon(Icons.add, color: Colors.white, size: 20),
-                  ))
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(27, 25, 25, 1))),
+              Text(product.content,
+                  style: GoogleFonts.openSans(
+                      fontSize: 12, color: Color.fromRGBO(148, 133, 133, 1))),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('₹ ${product.price}',
+                      style: GoogleFonts.openSans(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: yellow),
+                        child: Icon(Icons.add, color: Colors.white, size: 20),
+                      ))
+                ],
+              )
             ],
           )
         ],
@@ -71,3 +79,4 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
+
